@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pets</title>
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block my_block %}
+
+<div class="card-deck">
+{% for pet in petlist %}
+
+  <div id="cards" style="display:flex; justify-content:space-around">
+  <div class="card" style="width: 20rem;">
+    <img src="{{ pet['image'] }}" class="card-img-top" alt="Pug Dog">
+    <div class="card-body">
+      <h5 class="card-title">{{ pet['name'] }}</h5>
+      <a href="{{ url_for('petId', id=pet['id']) }}" class="btn btn-success">View More</a>
+    </div>
+  </div>
+{% endfor %}
+  </div>
+
+{% endblock %}
+
+
+
+
+</body>
+</html>

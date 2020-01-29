@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add to Cart</title>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block my_block %}
+    <form method="POST" action="/cart">
+    {{ form.hidden_tag() }}
+
+   <button type="submit" class="btn btn-primary">Add to Cart</button>
+
+
+
+
+
+{%  endblock %}
+</body>
+</html>
